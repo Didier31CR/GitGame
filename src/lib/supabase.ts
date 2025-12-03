@@ -157,7 +157,7 @@ export async function getLeaderboard(limit: number = 10) {
   const { data, error } = await supabase
     .from('user_profiles')
     .select('*')
-    .order('totalPoints', { ascending: false })
+    .order('totalpoints', { ascending: false })
     .limit(limit);
   return { data, error };
 }

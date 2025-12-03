@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GAME_LEVELS, verifyCommand } from '../lib/levels'
-import { saveGameProgress, getCurrentUser } from '../lib/supabase'
+import { saveGameProgress, supabase } from '../lib/supabase'
 import './Game.css'
 
 export default function Game() {
@@ -17,9 +17,11 @@ export default function Game() {
   const [startTime, setStartTime] = useState(Date.now())
 
   useEffect(() => {
-    getCurrentUser().then(u => {
-      if (!u) navigate('/auth')
-      setUser(u)
+    // Obtiene el usuario actual de Supabase
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        setUser(session.user)
+      }
     })
     setStartTime(Date.now())
   }, [])

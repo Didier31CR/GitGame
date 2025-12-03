@@ -1,21 +1,18 @@
 import './Navbar.css'
 import { useNavigate } from 'react-router-dom'
 import { signOut } from '../lib/supabase'
+import { useAuth } from '../context/AuthContext'
 import { useState } from 'react'
 
-interface NavbarProps {
-  user: any
-  onLogout: () => void
-}
-
-export default function Navbar({ user, onLogout }: NavbarProps) {
+export default function Navbar({ user, username, onLogout }: any) {
   const navigate = useNavigate()
+  const { logout } = useAuth()
   const [loading, setLoading] = useState(false)
 
   const handleLogout = async () => {
     setLoading(true)
     await signOut()
-    onLogout()
+    logout()
     navigate('/')
     setLoading(false)
   }
@@ -38,7 +35,7 @@ export default function Navbar({ user, onLogout }: NavbarProps) {
         <div className="navbar-user">
           {user && (
             <>
-              <span className="user-email">{user.email}</span>
+              <span className="user-email">{username}</span>
               <button 
                 className="btn-logout" 
                 onClick={handleLogout}

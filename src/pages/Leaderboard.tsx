@@ -35,13 +35,18 @@ export default function Leaderboard() {
   }
 
   if (loading) {
-    return <div className="leaderboard-container"><p>Cargando...</p></div>
+    return (
+      <div className="loading-container">
+        <div className="loader"></div>
+        <p>Cargando puntuaciones...</p>
+      </div>
+    )
   }
 
   const totalPoints = userProgress.reduce((sum, p) => sum + (p.points || 0), 0)
   const levelsCompleted = userProgress.filter(p => p.completed).length
   const medals = GAME_LEVELS.filter((level, idx) => 
-    userProgress.some(p => p.levelId === level.id && p.completed)
+    userProgress.some(p => p.levelid === level.id && p.completed)
   ).map(level => level.medal)
 
   return (
@@ -113,7 +118,7 @@ export default function Leaderboard() {
           <h2>📊 Tu Progreso por Nivel</h2>
           <div className="progress-list">
             {GAME_LEVELS.map(level => {
-              const progress = userProgress.find(p => p.levelId === level.id)
+              const progress = userProgress.find(p => p.levelid === level.id)
               return (
                 <div key={level.id} className="progress-item">
                   <div className="level-info">
