@@ -1,19 +1,65 @@
 import { GAME_LEVELS } from '../lib/levels'
+import { LEVEL_THEORY } from '../lib/tutorials'
 import './Tutorial.css'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Tutorial() {
   const navigate = useNavigate()
+  const [selectedLevel, setSelectedLevel] = useState<number | null>(null)
+
+  const selectedTheory = selectedLevel ? LEVEL_THEORY[selectedLevel as keyof typeof LEVEL_THEORY] : null
 
   return (
     <div className="tutorial-container">
       <div className="tutorial-content">
-        <h1>📖 Tutorial de Git</h1>
-        <p className="intro">Aprende los comandos esenciales de Git para dominar el control de versiones</p>
+        <h1>📖 Tutorial Completo de Git</h1>
+        <p className="intro">Domina Git con 80 lecciones progresivas de teoría y práctica</p>
+
+        {selectedTheory && (
+          <div className="theory-panel">
+            <button className="close-theory" onClick={() => setSelectedLevel(null)}>✕</button>
+            <h2>{selectedTheory.title}</h2>
+            <div className="theory-content">
+              <section className="theory-section">
+                <h3>📚 Teoría</h3>
+                <p>{selectedTheory.theory}</p>
+              </section>
+
+              {selectedTheory.examples && (
+                <section className="examples-section">
+                  <h3>💻 Ejemplos Prácticos</h3>
+                  {selectedTheory.examples.map((ex) => (
+                    <div key={ex.step} className="example-step">
+                      <div className="step-number">Paso {ex.step}</div>
+                      <p className="step-description">{ex.description}</p>
+                      <code className="command">{ex.command}</code>
+                      <div className="output">
+                        <p className="output-label">Resultado:</p>
+                        <pre>{ex.output}</pre>
+                      </div>
+                    </div>
+                  ))}
+                </section>
+              )}
+
+              {selectedTheory.whyImportant && (
+                <section className="importance-section">
+                  <h3>⭐ ¿Por Qué es Importante?</h3>
+                  <p>{selectedTheory.whyImportant}</p>
+                </section>
+              )}
+            </div>
+          </div>
+        )}
 
         <div className="levels-grid">
           {GAME_LEVELS.map((level, index) => (
-            <div key={level.id} className="tutorial-card">
+            <div 
+              key={level.id} 
+              className={`tutorial-card ${selectedTheory?.title === LEVEL_THEORY[level.id as keyof typeof LEVEL_THEORY]?.title ? 'active' : ''}`}
+              onClick={() => setSelectedLevel(level.id)}
+            >
               <div className="card-number">{index + 1}</div>
               <h3>{level.title}</h3>
               <p className="card-description">{level.description}</p>
@@ -40,6 +86,10 @@ export default function Tutorial() {
                 <span className="medal">{level.medal}</span>
                 <span className="points">+{level.points} pts</span>
               </div>
+              
+              {LEVEL_THEORY[level.id as keyof typeof LEVEL_THEORY] && (
+                <div className="has-theory">📖 Lección disponible</div>
+              )}
             </div>
           ))}
         </div>

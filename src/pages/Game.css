@@ -192,13 +192,14 @@
   display: flex;
   gap: 15px;
   margin-top: 30px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn-next,
 .btn-skip,
 .btn-back {
-  padding: 12px 24px;
+  padding: 0 24px;
   border: none;
   border-radius: 6px;
   font-weight: 600;
@@ -207,7 +208,10 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   flex: 1;
-  min-width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-next {
@@ -233,6 +237,7 @@
 .btn-back {
   background-color: #7b68ee;
   color: white;
+  margin: 0 !important;
 }
 
 .btn-back:hover {
@@ -258,11 +263,17 @@
 
   .action-buttons {
     flex-direction: column;
+    gap: 10px;
   }
 
   .btn-next,
   .btn-skip,
   .btn-back {
     width: 100%;
+    margin: 0;
+  }
+
+  .btn-back {
+    margin: 0;
   }
 }
