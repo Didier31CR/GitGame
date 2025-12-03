@@ -1,0 +1,268 @@
+.game-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 40px 20px;
+}
+
+.game-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 12px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+}
+
+.game-header h2 {
+  color: #4a90e2;
+  font-size: 1.8em;
+}
+
+.game-stats {
+  display: flex;
+  gap: 30px;
+  font-size: 1.1em;
+  color: #bdc3c7;
+}
+
+.game-stats strong {
+  color: #7b68ee;
+}
+
+.challenge-box {
+  background: rgba(123, 104, 238, 0.1);
+  border-left: 4px solid #7b68ee;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.challenge-box h3 {
+  color: #4a90e2;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.description {
+  color: #bdc3c7;
+  margin-bottom: 20px;
+  font-size: 1.05em;
+}
+
+.scenario-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid #f39c12;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.scenario-box p:first-child {
+  color: #f39c12;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.scenario-box p {
+  color: #bdc3c7;
+  margin: 0;
+}
+
+.hint-section {
+  margin-top: 20px;
+}
+
+.btn-hint {
+  padding: 8px 16px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-hint:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.hint-box {
+  background: rgba(46, 204, 113, 0.1);
+  border-left: 3px solid #2ecc71;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 10px;
+  color: #2ecc71;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.input-section label {
+  color: #ecf0f1;
+  font-size: 1.05em;
+}
+
+.input-section input {
+  padding: 15px;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #ecf0f1;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.input-section input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.input-section input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-verify {
+  padding: 12px 24px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-verify:hover:not(:disabled) {
+  background-color: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.btn-verify:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback-box {
+  padding: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.05em;
+  border-left: 4px solid;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+}
+
+.feedback-success {
+  border-left-color: #2ecc71;
+  color: #2ecc71;
+  background: rgba(46, 204, 113, 0.1);
+}
+
+.feedback-error {
+  border-left-color: #e74c3c;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-next,
+.btn-skip,
+.btn-back {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.btn-next {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.btn-skip {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-skip:hover {
+  background-color: #d68910;
+  transform: translateY(-2px);
+}
+
+.btn-back {
+  background-color: #7b68ee;
+  color: white;
+}
+
+.btn-back:hover {
+  background-color: #6a5acd;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .game-content {
+    padding: 20px;
+  }
+
+  .game-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .game-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn-next,
+  .btn-skip,
+  .btn-back {
+    width: 100%;
+  }
+}

@@ -1,0 +1,279 @@
+.tutorial-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 40px 20px;
+}
+
+.tutorial-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tutorial-content h1 {
+  text-align: center;
+  color: #4a90e2;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.intro {
+  text-align: center;
+  color: #bdc3c7;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.tutorial-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 12px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tutorial-card:hover {
+  border-color: #4a90e2;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
+}
+
+.card-number {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #4a90e2;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.tutorial-card h3 {
+  color: #7b68ee;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  margin-right: 50px;
+}
+
+.card-description {
+  color: #bdc3c7;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+.commands {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid #2ecc71;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 15px 0;
+}
+
+.commands p {
+  color: #ecf0f1;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.commands code {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  color: #2ecc71;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  overflow-x: auto;
+}
+
+.alternatives {
+  color: #f39c12;
+  font-size: 0.85em;
+  margin-top: 8px !important;
+}
+
+.scenario-info,
+.hint-info {
+  background: rgba(123, 104, 238, 0.1);
+  border-left: 3px solid #7b68ee;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 15px 0;
+}
+
+.scenario-info p,
+.hint-info p {
+  color: #bdc3c7;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.scenario-info p:first-child,
+.hint-info p:first-child {
+  color: #7b68ee;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.footer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.medal {
+  font-size: 1.1em;
+}
+
+.points {
+  color: #2ecc71;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.tips-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.tips-section h2 {
+  color: #4a90e2;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  background: rgba(123, 104, 238, 0.1);
+  border: 2px solid #7b68ee;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: scale(1.05);
+}
+
+.tip-card h4 {
+  color: #7b68ee;
+  margin-bottom: 10px;
+}
+
+.tip-card p {
+  color: #bdc3c7;
+  font-size: 0.9em;
+}
+
+.additional-commands {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.additional-commands h2 {
+  color: #4a90e2;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.command-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.command-item {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid #4a90e2;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.command-item code {
+  color: #2ecc71;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.command-item p {
+  color: #bdc3c7;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.btn-back {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 24px;
+  background-color: #7b68ee;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-back:hover {
+  background-color: #6a5acd;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .tutorial-content h1 {
+    font-size: 1.8em;
+  }
+
+  .levels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .command-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-section,
+  .additional-commands {
+    padding: 20px;
+  }
+}
